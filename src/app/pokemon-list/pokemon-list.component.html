@@ -1,9 +1,17 @@
-<div *ngFor="let pokemon of pokemons">
-  <h3>
-    <a [routerLink]="['/pokemon', pokemon.id]">{{ pokemon.name }}</a>
-  </h3>
-  <img [src]="pokemon.image" alt="{{ pokemon.name }}" />
-  <p>Type: {{ pokemon.type }}</p>
-  <p>Power: {{ pokemon.power }}</p>
-  <p>Life: {{ pokemon.life }}</p>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let pokemon of pokemons">
+      <div class="card">
+        <img [src]="pokemon.image" class="card-img-top" alt="{{ pokemon.name }}" />
+        <div class="card-body">
+          <h5 class="card-title">
+            <a [routerLink]="['/pokemon', pokemon.id]" class="text-decoration-none">{{ pokemon.name }}</a>
+          </h5>
+          <p class="card-text">Type: {{ pokemon.type }}</p>
+          <p class="card-text">Power: {{ pokemon.power }}</p>
+          <p class="card-text">Life: {{ pokemon.life }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

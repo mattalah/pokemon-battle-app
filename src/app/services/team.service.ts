@@ -7,7 +7,7 @@ import { Team } from '../models/team.model';
   providedIn: 'root',
 })
 export class TeamService {
-  private apiUrl = 'https://localhost:3000';
+  private apiUrl = 'http://localhost:3000/api';
 
   constructor(private http: HttpClient) {}
 

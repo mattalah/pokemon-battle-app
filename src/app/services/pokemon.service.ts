@@ -7,15 +7,15 @@ import { Pokemon } from '../models/pokemon.model';
   providedIn: 'root',
 })
 export class PokemonService {
-  private apiUrl = 'https://localhost:3000';
+  private apiUrl = 'http://localhost:3000/api/pokemons';
 
   constructor(private http: HttpClient) {}
 
   getAllPokemons(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/pokemons`);
+    return this.http.get(`${this.apiUrl}`);
   }
 
   updatePokemon(pokemon: Pokemon): Observable<any> {
-    return this.http.put(`${this.apiUrl}/pokemons/${pokemon.id}`, pokemon);
+    return this.http.put(`${this.apiUrl}/${pokemon.id}`, pokemon);
   }
 }
