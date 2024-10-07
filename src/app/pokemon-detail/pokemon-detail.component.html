@@ -1,1 +1,6 @@
-<p>pokemon-detail works!</p>
+<form (ngSubmit)="updatePokemon()">
+    <input [(ngModel)]="pokemon.name" placeholder="Name" required />
+    <input [(ngModel)]="pokemon.power" placeholder="Power" type="number" required />
+    <input [(ngModel)]="pokemon.life" placeholder="Life" type="number" required />
+    <button type="submit">Update Pokémon</button>
+  </form>
