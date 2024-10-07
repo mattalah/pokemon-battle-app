@@ -1,15 +1,48 @@
-<form (ngSubmit)="addTeam()">
-    <input [(ngModel)]="newTeam.pokemon1" placeholder="Pokemon 1" required />
-    <input [(ngModel)]="newTeam.pokemon2" placeholder="Pokemon 2" required />
-    <input [(ngModel)]="newTeam.pokemon3" placeholder="Pokemon 3" required />
-    <input [(ngModel)]="newTeam.pokemon4" placeholder="Pokemon 4" required />
-    <input [(ngModel)]="newTeam.pokemon5" placeholder="Pokemon 5" required />
-    <input [(ngModel)]="newTeam.pokemon6" placeholder="Pokemon 6" required />
-    <button type="submit">Add Team</button>
+<form (ngSubmit)="addTeam()" class="mt-4 p-3">
+    <div class="mb-3">
+      <label for="pokemon1" class="form-label">Pokémon 1</label>
+      <select id="pokemon1" [(ngModel)]="newTeam.pokemon1" name="pokemon1" class="form-select" required>
+        <option *ngFor="let pokemon of pokemons" [value]="pokemon.id">{{ pokemon.name }}</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="pokemon2" class="form-label">Pokémon 2</label>
+      <select id="pokemon2" [(ngModel)]="newTeam.pokemon2" name="pokemon2" class="form-select" required>
+        <option *ngFor="let pokemon of pokemons" [value]="pokemon.id">{{ pokemon.name }}</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="pokemon3" class="form-label">Pokémon 3</label>
+      <select id="pokemon3" [(ngModel)]="newTeam.pokemon3" name="pokemon3" class="form-select" required>
+        <option *ngFor="let pokemon of pokemons" [value]="pokemon.id">{{ pokemon.name }}</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="pokemon4" class="form-label">Pokémon 4</label>
+      <select id="pokemon4" [(ngModel)]="newTeam.pokemon4" name="pokemon4" class="form-select" required>
+        <option *ngFor="let pokemon of pokemons" [value]="pokemon.id">{{ pokemon.name }}</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="pokemon5" class="form-label">Pokémon 5</label>
+      <select id="pokemon5" [(ngModel)]="newTeam.pokemon5" name="pokemon5" class="form-select" required>
+        <option *ngFor="let pokemon of pokemons" [value]="pokemon.id">{{ pokemon.name }}</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="pokemon6" class="form-label">Pokémon 6</label>
+      <select id="pokemon6" [(ngModel)]="newTeam.pokemon6" name="pokemon6" class="form-select" required>
+        <option *ngFor="let pokemon of pokemons" [value]="pokemon.id">{{ pokemon.name }}</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Team</button>
   </form>
   
-  <div *ngFor="let team of teams">
-    <p>Team ID: {{ team.id }}</p>
-    <p>Power: {{ team.total_power }}</p>
+  <div class="mt-4">
+    <h3>Teams</h3>
+    <div *ngFor="let team of teams" class="border rounded p-2 mb-2">
+      <p><strong>Team ID:</strong> {{ team.id }}</p>
+      <p><strong>Power:</strong> {{ team.total_power }}</p>
+    </div>
   </div>
   
