@@ -1,1 +1,15 @@
-<p>team-management works!</p>
+<form (ngSubmit)="addTeam()">
+    <input [(ngModel)]="newTeam.pokemon1" placeholder="Pokemon 1" required />
+    <input [(ngModel)]="newTeam.pokemon2" placeholder="Pokemon 2" required />
+    <input [(ngModel)]="newTeam.pokemon3" placeholder="Pokemon 3" required />
+    <input [(ngModel)]="newTeam.pokemon4" placeholder="Pokemon 4" required />
+    <input [(ngModel)]="newTeam.pokemon5" placeholder="Pokemon 5" required />
+    <input [(ngModel)]="newTeam.pokemon6" placeholder="Pokemon 6" required />
+    <button type="submit">Add Team</button>
+  </form>
+  
+  <div *ngFor="let team of teams">
+    <p>Team ID: {{ team.id }}</p>
+    <p>Power: {{ team.total_power }}</p>
+  </div>
+  
