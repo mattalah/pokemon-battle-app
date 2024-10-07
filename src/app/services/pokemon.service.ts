@@ -15,6 +15,10 @@ export class PokemonService {
     return this.http.get(`${this.apiUrl}`);
   }
 
+  getPokemonById(id: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/${id}`);
+  }
+  
   updatePokemon(pokemon: Pokemon): Observable<any> {
     return this.http.put(`${this.apiUrl}/${pokemon.id}`, pokemon);
   }

@@ -1,15 +1,15 @@
 <form (ngSubmit)="updatePokemon()" class="mt-4 p-3">
   <div class="mb-3">
     <label for="name" class="form-label">Name</label>
-    <input id="name" [(ngModel)]="pokemon.name" class="form-control" placeholder="Name" required />
+    <input id="name" [(ngModel)]="pokemon.name" name="name" class="form-control" placeholder="Name" required />
   </div>
   <div class="mb-3">
     <label for="power" class="form-label">Power</label>
-    <input id="power" [(ngModel)]="pokemon.power" class="form-control" placeholder="Power" type="number" required />
+    <input id="power" [(ngModel)]="pokemon.power" name="power" class="form-control" placeholder="Power" type="number" required />
   </div>
   <div class="mb-3">
     <label for="life" class="form-label">Life</label>
-    <input id="life" [(ngModel)]="pokemon.life" class="form-control" placeholder="Life" type="number" required />
+    <input id="life" [(ngModel)]="pokemon.life" name="life" class="form-control" placeholder="Life" type="number" required />
   </div>
   <button type="submit" class="btn btn-primary">Update Pokémon</button>
 </form>
