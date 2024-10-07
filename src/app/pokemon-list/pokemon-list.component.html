@@ -1,9 +1,7 @@
-@for (pokemon of pokemons; track pokemon.id; let idx = $index, e = $even){
-<h3>"{{ pokemon.name }}"</h3>
-<img [src]="pokemon.image" alt="{{ pokemon.name }}" />
-<p>Type: {{ pokemon.type }}</p>
-<p>Power: {{ pokemon.power }}</p>
-<p>Life: {{ pokemon.life }}</p>
-} @empty {
-<li aria-hidden="true">There are no items.</li>
-}
+<div *ngFor="let pokemon of pokemons">
+    <h3>{{ pokemon.name }}</h3>
+    <img [src]="pokemon.image" alt="{{ pokemon.name }}" />
+    <p>Type: {{ pokemon.type }}</p>
+    <p>Power: {{ pokemon.power }}</p>
+    <p>Life: {{ pokemon.life }}</p>
+  </div>
