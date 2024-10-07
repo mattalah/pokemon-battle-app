@@ -8,13 +8,15 @@ import { FormsModule } from '@angular/forms';
 import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
 import { TeamManagementComponent } from './team-management/team-management.component';
 import { AppRoutingModule } from './app-routing.module';
+import { BattleComponent } from './battle/battle.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PokemonListComponent,
     PokemonDetailComponent,
-    TeamManagementComponent
+    TeamManagementComponent,
+    BattleComponent
   ],
   imports: [
     BrowserModule,
