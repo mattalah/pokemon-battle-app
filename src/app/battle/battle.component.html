@@ -1,0 +1,30 @@
+<div class="container mt-4">
+  <h2>Pokémon Battle</h2>
+
+  <div *ngIf="team1 && team2">
+    <h3>Team 1</h3>
+    <ul>
+      <li *ngFor="let pokemon of team1.pokemons">
+        {{ pokemon.name }} - Life: {{ pokemon.life }} (Type: {{ pokemon.type }})
+      </li>
+    </ul>
+
+    <h3>Team 2</h3>
+    <ul>
+      <li *ngFor="let pokemon of team2.pokemons">
+        {{ pokemon.name }} - Life: {{ pokemon.life }} (Type: {{ pokemon.type }})
+      </li>
+    </ul>
+  </div>
+
+  <div class="mt-4">
+    <h4>Battle Log</h4>
+    <div *ngFor="let log of battleLog">
+      {{ log }}
+    </div>
+  </div>
+
+  <div *ngIf="winner" class="mt-4">
+    <h3>Winner: {{ winner }}</h3>
+  </div>
+</div>

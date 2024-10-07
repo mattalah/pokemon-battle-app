@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { forkJoin, Observable } from 'rxjs';
 import { Pokemon } from '../models/pokemon.model';
 
 @Injectable({
@@ -18,7 +18,12 @@ export class PokemonService {
   getPokemonById(id: string): Observable<any> {
     return this.http.get(`${this.apiUrl}/${id}`);
   }
-  
+
+  getPokemonsByIds(ids: number[]): Observable<Pokemon[]> {
+    const requests = ids.map(id => this.http.get<Pokemon>(`${this.apiUrl}/${id}`));
+    return forkJoin(requests);
+  }
+
   updatePokemon(pokemon: Pokemon): Observable<any> {
     return this.http.put(`${this.apiUrl}/${pokemon.id}`, pokemon);
   }
